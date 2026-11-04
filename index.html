@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101a19">
+  <meta name="description" content="Between Stops — a small, human story about work, care, and making room for help.">
+  <title>Between Stops — A Small Story</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="wordmark" href="#" aria-label="Between Stops home" id="home-link"><span class="mark">B</span> BETWEEN STOPS</a>
+    <div class="topbar-right"><span class="story-label">A SMALL STORY · 6 SCENES</span><span class="story-label save-label">SAVES ON THIS DEVICE</span></div>
+  </header>
+
+  <main id="app" class="app-shell">
+    <section id="intro-screen" class="intro-screen" aria-labelledby="story-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> AN INTERACTIVE STORY</p>
+        <h1 id="story-title">Between<br><em>Stops.</em></h1>
+        <p class="intro-deck">One Tuesday. A shift to get to, a father learning to ask, and the small distance between doing it all yourself and letting someone in.</p>
+        <div class="intro-meta"><span>20–30 MIN</span><i></i><span>CHOICES SHAPE THE DAY</span><i></i><span>NO WRONG ANSWERS</span></div>
+        <button id="start-button" class="primary-button" type="button"><span>Begin the day</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+        <button id="resume-button" class="resume-button hidden" type="button">Continue where you left off <span>→</span></button>
+        <p class="fiction-note">Fiction inspired by the ordinary lives of people who care for one another.</p>
+      </div>
+      <div class="intro-art" aria-hidden="true">
+        <div class="sun-haze"></div><div class="art-window"><div class="window-sky"><div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div></div><div class="window-buildings"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="window-road"></div><div class="bus-stop"><div class="stop-pole"></div><div class="stop-sign"></div><div class="bench"></div></div><div class="art-shadow"></div></div>
+        <div class="art-caption"><span>7:12 AM</span><span>THE 14 IS RUNNING LATE</span></div>
+        <div class="art-side-note">SOUTH END<br>·<br>EARLY AUTUMN</div>
+      </div>
+      <div class="intro-bottom"><span>TAKE YOUR TIME.</span><span>YOUR DAY WILL KEEP MOVING.</span></div>
+    </section>
+
+    <section id="game-screen" class="game-screen hidden" aria-live="polite" aria-label="Story">
+      <aside class="sidebar">
+        <div class="day-card"><span class="micro-label">TUESDAY, OCTOBER 8</span><div class="day-weather"><span class="weather-dot"></span> OVERCAST, MILD</div><div class="day-progress"><span id="progress-fill"></span></div><div class="progress-caption"><span>YOUR DAY</span><span id="chapter-count">01 / 06</span></div></div>
+        <div class="time-card"><span class="micro-label">RIGHT NOW</span><div id="story-time" class="story-time">7:12<span>AM</span></div><div id="story-place" class="story-place">THE BUS STOP</div></div>
+        <div class="meters" aria-label="Your resources">
+          <div class="meter-row"><div class="meter-heading"><span class="meter-icon cash-icon">$</span><span>Cash buffer</span><span id="cash-value" class="meter-value">3</span></div><div class="meter-track" id="cash-meter" role="img" aria-label="Cash buffer 3 of 5"><i class="filled"></i><i class="filled"></i><i class="filled"></i><i></i><i></i></div></div>
+          <div class="meter-row"><div class="meter-heading"><span class="meter-icon energy-icon">ϟ</span><span>Energy</span><span id="energy-value" class="meter-value">4</span></div><div class="meter-track" id="energy-meter" role="img" aria-label="Energy 4 of 5"><i class="filled"></i><i class="filled"></i><i class="filled"></i><i class="filled"></i><i></i></div></div>
+          <div class="meter-row"><div class="meter-heading"><span class="meter-icon heart-icon">♡</span><span>Closeness</span><span id="closeness-value" class="meter-value">3</span></div><div class="meter-track" id="closeness-meter" role="img" aria-label="Closeness 3 of 5"><i class="filled"></i><i class="filled"></i><i class="filled"></i><i></i><i></i></div></div>
+        </div>
+        <div class="sidebar-note"><span class="note-star">✳</span><p>There isn't a perfect way through a day. Just the way you choose to meet it.</p></div>
+        <button id="journal-button" class="journal-button" type="button"><span>≡</span> YOUR DAY, SO FAR <span id="journal-count">0</span></button>
+      </aside>
+
+      <article class="story-panel">
+        <div class="scene-topline"><span id="scene-kicker" class="eyebrow">MORNING ROUTINE</span><span id="scene-index" class="scene-index">01</span></div>
+        <h2 id="scene-title">A seat by the window</h2>
+        <div id="scene-text" class="scene-text"></div>
+        <div id="choice-area" class="choice-area"></div>
+        <div id="after-choice" class="after-choice hidden" role="status"><span class="response-mark">↳</span><p id="response-text"></p><button id="continue-button" class="continue-button" type="button">Continue <span>→</span></button></div>
+        <div id="ending-actions" class="ending-actions hidden"><button id="restart-button" class="primary-button" type="button"><span>Start another day</span><span class="button-arrow">↗</span></button><button id="review-button" class="text-button" type="button">Read your day <span>→</span></button></div>
+        <div class="story-footer"><span>BETWEEN STOPS</span><span>TAKE A BREATH <b>·</b> KEEP GOING</span></div>
+      </article>
+      <div id="journal-drawer" class="journal-drawer hidden" aria-label="Your day so far"><div class="journal-head"><div><span class="micro-label">A RECORD OF TODAY</span><h3>Your day, so far</h3></div><button id="close-journal" class="close-button" aria-label="Close journal" type="button">×</button></div><div id="journal-list" class="journal-list"></div></div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="game.js"></script>
+</body>
+</html>
